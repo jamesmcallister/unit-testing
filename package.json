@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:w": "npm run test -- --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^22.1.4"
+    "@types/jest": "^23.0.0",
+    "jest": "^23.1.0"
   }
 }
