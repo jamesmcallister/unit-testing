@@ -75,8 +75,19 @@ function megativeOnly(numbers) {
   return numbers.filter(number => number > 0);
 }
 
+function camelise(string) {
+  const firstWord = string.toLowerCase().split(" ")[0];
+  const notFirstWords = string
+    .toLowerCase()
+    .split(" ")
+    .slice(1)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1));
+  return [firstWord, ...notFirstWords].join("");
+}
+
 module.exports = {
   add,
+  camelise,
   longestString,
   Leet,
   uniqueStrings,

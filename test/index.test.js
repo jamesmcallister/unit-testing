@@ -2,6 +2,7 @@ const {
   add,
   longestString,
   Leet,
+  camelise,
   uniqueStrings,
   Developer,
   Garden,
@@ -104,4 +105,9 @@ test("stringsConcat", function() {
 
 test("negativeOnly", () => {
   expect(megativeOnly([-1, -2, -41, 3, 24, 7])).toEqual([3, 24, 7]);
+});
+
+test("camelise", () => {
+  const stringToTest = "James and edem";
+  expect(camelise(stringToTest)).toBe("jamesAndEdem");
 });
