@@ -113,21 +113,18 @@ test("camelise", () => {
 });
 
 function merging(arr) {
-  // if shortest place a index last
   const orderedArray = arr.sort(
-    (a, b) => Object.keys(a).length + Object.keys(b).length
+    (a, b) => Object.keys(a).length < Object.keys(b).length
   );
-  const lastOne = orderedArray.slice(orderedArray.length - 1);
-  const allTheOthers = orderedArray.slice(0, orderedArray.length - 1);
 
-  const result = Object.assign({ ...allTheOthers, ...lastOne });
+  const result = Object.assign({}, ...orderedArray);
 
-  return { ...allTheOthers, ...lastOne };
+  return result;
 }
 
 test("merge", () => {
-  // const arraysToMerge = [{ a: 5 }, { a: 3, b: 21, c: 32 }];
-  // expect(merging(arraysToMerge)).toEqual({ a: 5, b: 21, c: 32 });
+  const arraysToMerge = [{ a: 5 }, { a: 3, b: 21, c: 32 }];
+  expect(merging(arraysToMerge)).toEqual({ a: 5, b: 21, c: 32 });
   const arraysToMerge1 = [{ a: 3, b: 21, c: 32 }, { a: 5 }];
   expect(merging(arraysToMerge1)).toEqual({ a: 5, b: 21, c: 32 });
 });
