@@ -43,10 +43,24 @@ Developer.prototype.learnLanguage = function(string) {
   return (this.languages = uniqueStrings([...this.languages, string]));
 };
 
+function Garden(gardenPlants) {
+  this.plants = gardenPlants;
+}
+
+Garden.prototype.addPlants = function(plants) {
+  Object.keys(plants).forEach(item => {
+    typeof this.plants[item] === "undefined"
+      ? (this.plants[item] = plants[item])
+      : (this.plants[item] += plants[item]);
+  });
+  return this.plants;
+};
+
 module.exports = {
   add,
   longestString,
   Leet,
   uniqueStrings,
-  Developer
+  Developer,
+  Garden
 };
