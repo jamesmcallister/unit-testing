@@ -5,7 +5,8 @@ const {
   uniqueStrings,
   Developer,
   Garden,
-  stringsConcat
+  stringsConcat,
+  megativeOnly
 } = require("../src/index.js");
 
 test("Addition", function() {
@@ -99,4 +100,8 @@ test("stringsConcat", function() {
   const mixedArray = ["three", "we", 3, 34];
   // expect("threewe").toBe(stringsConcat(mixedArray));
   expect(stringsConcat(mixedArray)).toBe("threewe");
+});
+
+test("negativeOnly", () => {
+  expect(megativeOnly([-1, -2, -41, 3, 24, 7])).toEqual([3, 24, 7]);
 });

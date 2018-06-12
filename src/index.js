@@ -57,19 +57,23 @@ Garden.prototype.addPlants = function(plants) {
 };
 
 Garden.prototype.harvest = function(plants) {
-  const that = this;
+  const self = this;
   Object.keys(plants).forEach(function(item) {
-    if (that.plants[item] > 1) {
-      that.plants[item] -= plants[item];
+    if (self.plants[item] > 1) {
+      self.plants[item] -= plants[item];
     }
-    if (that.plants[item] < 1) {
-      delete that.plants[item];
+    if (self.plants[item] < 1) {
+      delete self.plants[item];
     }
   });
   return this.plants;
 };
 const stringsConcat = arr =>
   arr.filter(item => typeof item === "string").join("");
+
+function megativeOnly(numbers) {
+  return numbers.filter(number => number > 0);
+}
 
 module.exports = {
   add,
@@ -78,5 +82,6 @@ module.exports = {
   uniqueStrings,
   Developer,
   Garden,
-  stringsConcat
+  stringsConcat,
+  megativeOnly
 };
