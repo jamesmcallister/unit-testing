@@ -67,6 +67,13 @@ Garden.prototype.harvest = function(plants) {
   });
   return this.plants;
 };
+function stringsConcat(arr) {
+  return arr
+    .filter(function(item) {
+      return typeof item === "string";
+    })
+    .join("");
+}
 
 module.exports = {
   add,
@@ -74,5 +81,6 @@ module.exports = {
   Leet,
   uniqueStrings,
   Developer,
-  Garden
+  Garden,
+  stringsConcat
 };

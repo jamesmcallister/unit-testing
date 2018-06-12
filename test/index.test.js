@@ -4,7 +4,8 @@ const {
   Leet,
   uniqueStrings,
   Developer,
-  Garden
+  Garden,
+  stringsConcat
 } = require("../src/index.js");
 
 test("Addition", function() {
@@ -92,4 +93,10 @@ test("lets harvest our garden", function() {
     steve: 1,
     maggies: 2
   });
+});
+
+test("stringsConcat", function() {
+  const mixedArray = ["three", "we", 3, 34];
+  // expect("threewe").toBe(stringsConcat(mixedArray));
+  expect(stringsConcat(mixedArray)).toBe("threewe");
 });
