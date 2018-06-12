@@ -74,3 +74,22 @@ test("add plants to garden", function() {
     sinflower: 67
   });
 });
+
+test("lets harvest our garden", function() {
+  const plants = {
+    trevor: 4,
+    steve: 1000,
+    maggies: 200
+  };
+  const roofGarden = new Garden(plants);
+  const plantsToHarvest = {
+    steve: 999,
+    maggies: 198
+  };
+  roofGarden.harvest(plantsToHarvest);
+  expect(roofGarden.plants).toEqual({
+    trevor: 4,
+    steve: 1,
+    maggies: 2
+  });
+});

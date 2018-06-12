@@ -56,6 +56,18 @@ Garden.prototype.addPlants = function(plants) {
   return this.plants;
 };
 
+Garden.prototype.harvest = function(plants) {
+  Object.keys(plants).forEach(item => {
+    if (this.plants[item] > 1) {
+      this.plants[item] -= plants[item];
+    }
+    if (this.plants[item] < 1) {
+      delete this.plants[item];
+    }
+  });
+  return this.plants;
+};
+
 module.exports = {
   add,
   longestString,
