@@ -57,23 +57,19 @@ Garden.prototype.addPlants = function(plants) {
 };
 
 Garden.prototype.harvest = function(plants) {
-  Object.keys(plants).forEach(item => {
-    if (this.plants[item] > 1) {
-      this.plants[item] -= plants[item];
+  const that = this;
+  Object.keys(plants).forEach(function(item) {
+    if (that.plants[item] > 1) {
+      that.plants[item] -= plants[item];
     }
-    if (this.plants[item] < 1) {
-      delete this.plants[item];
+    if (that.plants[item] < 1) {
+      delete that.plants[item];
     }
   });
   return this.plants;
 };
-function stringsConcat(arr) {
-  return arr
-    .filter(function(item) {
-      return typeof item === "string";
-    })
-    .join("");
-}
+const stringsConcat = arr =>
+  arr.filter(item => typeof item === "string").join("");
 
 module.exports = {
   add,
