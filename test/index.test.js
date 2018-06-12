@@ -1,7 +1,7 @@
 const {
   add,
   longestString,
-  Leet,
+  l337,
   camelise,
   uniqueStrings,
   Developer,
@@ -22,13 +22,13 @@ test("longestString", () => {
 });
 
 test("1337", function() {
-  expect(Leet("lollie")).toBe("101113");
-  expect(Leet("alex")).toBe("413x");
+  expect(l337("lollie")).toBe("101113");
+  expect(l337("alex")).toBe("413x");
 });
 
 test("l337", function() {
   const expected = "413x";
-  const result = Leet("alex");
+  const result = l337("alex");
   expect(result).toBe(expected);
 });
 

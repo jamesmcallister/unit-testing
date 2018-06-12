@@ -21,7 +21,7 @@ const formula = {
   o: 0
 };
 
-function Leet(string) {
+function l337(string) {
   const result = [...string].map(
     item => (typeof formula[item] === "number" ? formula[item] : item)
   );
@@ -89,7 +89,7 @@ module.exports = {
   add,
   camelise,
   longestString,
-  Leet,
+  l337,
   uniqueStrings,
   Developer,
   Garden,
